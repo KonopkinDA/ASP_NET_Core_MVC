@@ -1,0 +1,28 @@
+﻿@model WebApplication1.Managers.CreateOrUpdateCountryRequest
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateCountry</title>
+</head>
+<body>
+    @using (Html.BeginForm("Create", "Country", FormMethod.Post))
+    {
+        <label>Название страны: </label>
+        <input id="Name" type="text" name="Name" /><br /><br />
+        <label>Комментарий о стране: </label>
+        <input id="Comment" type="text" name="Comment" /><br /><br />
+        <input type="submit" value="Добавить новую страну" />
+    }
+
+    @using (Html.BeginForm("ShowCountrys", "Country", FormMethod.Get))
+    {
+        <input type="submit" value="Вернуться" />
+    }
+</body>
+</html>

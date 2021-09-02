@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Storage.Entity.Veranda
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateVeranda</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Update", "Veranda", FormMethod.Post))
+        {
+            <input id="VerandaId" name="VerandaId" type="hidden" value="@Model.Id" />
+
+            <label>Название веранды: </label>
+            <input id="Name" type="text" name="Name" value="@Model.Name" /><br /><br />
+            <label>Тип веранды: </label>
+            <input id="YearTime" type="text" name="YearTime" value="@Model.YearTime" /><br /><br />
+            <input type="submit" value="Сохранить изменения" />
+        }
+
+        <a href="/Veranda/ShowVerandas">Вернуться</a><br /><br />
+    </div>
+</body>
+</html>

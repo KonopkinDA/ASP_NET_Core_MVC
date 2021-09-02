@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WebApplication1.Storage.Entity.Product>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowProducts</title>
+</head>
+<body>
+    <div>
+        <h1>Продукты</h1>
+        @foreach (var item in Model)
+        {
+            <label>ID: </label>@item.Id<br />
+            <label>Название продукта:  </label>@item.Name<br />
+            <label>Дней годности:  </label>@item.Time<br />
+            <label>Блюдо: </label>@item.FoodFor.Name<br />
+            <a href="/Product/UpdateProducts/@item.Id">Редактировать продукт</a><br />
+            <a href="/Product/DeleteProduct/@item.Id">Удалить продукт</a><br /><br />
+
+        }
+    </div>
+    <a href="/Food/ShowFoods">Вернуться к блюдам</a><br /><br />
+
+</body>
+</html>

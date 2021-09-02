@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Managers.FindRestaurantRequest
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FindRestaurants</title>
+</head>
+<body>
+    @using (Html.BeginForm("FindN", "Restaurant"))
+    {
+        <label>Название ресторана: </label>
+        <input id="Name" type="text" name="Name" /><br /><br />
+        <input type="submit" value="Искать по названию" /><br />
+        <br />
+    }
+    @using (Html.BeginForm("FindS", "Restaurant"))
+    {
+        <label>Звёзды ресторана: </label>
+        <input id="Stars" type="text" name="Stars" /><br /><br />
+        <input type="submit" value="Искать по количеству звёзд" /><br />
+    }
+    <a href="/Restaurant/ShowRestaurants">Вернуться</a><br /><br />
+</body>
+</html>

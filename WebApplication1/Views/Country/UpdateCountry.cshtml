@@ -1,0 +1,32 @@
+﻿@model WebApplication1.Storage.Entity.Country
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateCountry</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Update", "Country", FormMethod.Post))
+        {
+            <input id="CountryId" name="CountryId" type="hidden" value="@Model.Id" />
+
+            <label>Название блюда: </label>
+            <input id="Name" type="text" name="Name" value="@Model.Name" /><br /><br />
+            <label>Комментарий о стране: </label>
+            <input id="Comment" type="text" name="Comment" value="@Model.Comment" /><br /><br />
+            <input type="submit" value="Сохранить изменения" />
+        }
+
+        @using (Html.BeginForm("ShowCountrys", "Country", FormMethod.Get))
+        {
+            <input type="submit" value="Вернуться" />
+        }
+    </div>
+</body>
+</html>

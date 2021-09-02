@@ -1,0 +1,25 @@
+﻿@model WebApplication1.Managers.CreateOrUpdateVerandaRequest
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateVerandas</title>
+</head>
+<body>
+    @using (Html.BeginForm("Create", "Veranda", FormMethod.Post))
+    {
+        <label>Название веранды: </label>
+        <input id="Name" type="text" name="Name" /><br /><br />
+        <label>Тип веранды: </label>
+        <input id="YearTime" type="text" name="YearTime" /><br /><br />
+        <input type="submit" value="Добавить новую веранду" />
+    }
+
+    <a href="/Restaurant/ShowRestaurants">Вернуться</a><br /><br />
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WebApplication1.Storage.Entity.Menu>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowMenus</title>
+</head>
+<body>
+    <div>
+        <h1>Меню</h1>
+        @foreach (var item in Model)
+        {
+            <label>ID: </label>@item.Id<br />
+            <label>Название меню:  </label>@item.Name<br />
+            <label>Скидка на меню:  </label>@item.Size<br />
+            <label>Веранда: </label>@item.VerandaFor.Name<br />
+            <a href="/Menu/UpdateMenus/@item.Id">Редактировать меню</a><br />
+            <a href="/Menu/DeleteMenu/@item.Id">Удалить меню</a><br />
+            <a href="/Food/CreateFoods/@item.Id">Добавить блюдо</a><br /><br />
+
+        }
+    </div>
+    <a href="/Food/ShowFoods">Показать блюда</a><br /><br />
+    <a href="/Veranda/ShowVerandas">Вернуться к верандам</a><br /><br />
+
+</body>
+</html>

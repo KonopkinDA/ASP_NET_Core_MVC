@@ -1,0 +1,25 @@
+﻿@model WebApplication1.Managers.CreateOrUpdateProductRequest
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateProducts</title>
+</head>
+<body>
+    @using (Html.BeginForm("Create", "Product", FormMethod.Post))
+    {
+        <label>Название продукта: </label>
+        <input id="Name" type="text" name="Name" /><br /><br />
+        <label>Дней годности: </label>
+        <input id="Time" type="text" name="Time" /><br /><br />
+        <input type="submit" value="Добавить новый продукт" />
+    }
+
+    <a href="/Food/ShowFoods">Вернуться</a><br /><br />
+</body>
+</html>

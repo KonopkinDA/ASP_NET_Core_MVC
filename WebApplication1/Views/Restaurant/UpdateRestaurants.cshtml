@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Storage.Entity.Restaurant
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateRestaurant</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Update", "Restaurant", FormMethod.Post))
+        {
+            <input id="RestaurantId" name="RestaurantId" type="hidden" value="@Model.Id" />
+
+            <label>Название ресторана: </label>
+            <input id="Name" type="text" name="Name" value="@Model.Name" /><br /><br />
+            <label>Количество звёзд: </label>
+            <input id="Stars" type="text" name="Stars" value="@Model.Stars" /><br /><br />
+            <input type="submit" value="Сохранить изменения" />
+        }
+
+        <a href="/Restaurant/ShowRestaurants">Вернуться</a><br /><br />
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Storage.Entity.City
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateCity</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Update", "City", FormMethod.Post))
+        {
+            <input id="CityId" name="CityId" type="hidden" value="@Model.Id" />
+
+            <label>Название города: </label>
+            <input id="Name" type="text" name="Name" value="@Model.Name" /><br /><br />
+            <label>Население города: </label>
+            <input id="People" type="text" name="People" value="@Model.People" /><br /><br />
+            <input type="submit" value="Сохранить изменения" />
+        }
+
+        <a href="/City/ShowCitys">Вернуться</a><br /><br />
+    </div>
+</body>
+</html>

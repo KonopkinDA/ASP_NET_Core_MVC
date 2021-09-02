@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Storage.Entity.Food
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateFood</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Update", "Food", FormMethod.Post))
+        {
+            <input id="FoodId" name="FoodId" type="hidden" value="@Model.Id" />
+
+            <label>Название блюда: </label>
+            <input id="Name" type="text" name="Name" value="@Model.Name" /><br /><br />
+            <label>Цена блюда: </label>
+            <input id="Price" type="text" name="Price" value="@Model.Price" /><br /><br />
+            <input type="submit" value="Сохранить изменения" />
+        }
+
+        <a href="/Food/ShowFoods">Вернуться</a><br /><br />
+    </div>
+</body>
+</html>

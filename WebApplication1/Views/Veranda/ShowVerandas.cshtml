@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WebApplication1.Storage.Entity.Veranda>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowVerandas</title>
+</head>
+<body>
+    <div>
+        <h1>Веранды</h1>
+        @foreach (var item in Model)
+        {
+            <label>ID: </label>@item.Id<br />
+            <label>Название веранды:  </label>@item.Name<br />
+            <label>Тип веранды:  </label>@item.YearTime<br />
+            <label>Ресторан: </label>@item.RestaurantFor.Name<br />
+            <a href="/Veranda/UpdateVerandas/@item.Id">Редактировать веранду</a><br />
+            <a href="/Veranda/DeleteVeranda/@item.Id">Удалить веранду</a><br />
+            <a href="/Menu/CreateMenus/@item.Id">Добавить меню</a><br /><br />
+
+        }
+    </div>
+    <a href="/Menu/ShowMenus">Показать меню</a><br /><br />
+    <a href="/Restaurant/ShowRestaurants">Вернуться к ресторанам</a><br /><br />
+
+</body>
+</html>

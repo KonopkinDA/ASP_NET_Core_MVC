@@ -1,0 +1,25 @@
+﻿@model WebApplication1.Managers.CreateOrUpdateMenuRequest
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateMenus</title>
+</head>
+<body>
+    @using (Html.BeginForm("Create", "Menu", FormMethod.Post))
+    {
+        <label>Название меню: </label>
+        <input id="Name" type="text" name="Name" /><br /><br />
+        <label>Скидка на меню: </label>
+        <input id="Size" type="text" name="Size" /><br /><br />
+        <input type="submit" value="Добавить новое меню" />
+    }
+
+    <a href="/Veranda/ShowVerandas">Вернуться</a><br /><br />
+</body>
+</html>

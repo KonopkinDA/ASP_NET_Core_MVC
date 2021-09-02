@@ -1,0 +1,25 @@
+﻿@model WebApplication1.Managers.CreateOrUpdateFoodRequest
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateFoods</title>
+</head>
+<body>
+    @using (Html.BeginForm("Create", "Food", FormMethod.Post))
+    {
+        <label>Название блюда: </label>
+        <input id="Name" type="text" name="Name" /><br /><br />
+        <label>Цена блюда: </label>
+        <input id="Price" type="text" name="Price" /><br /><br />
+        <input type="submit" value="Добавить новое блюдо" />
+    }
+
+    <a href="/Menu/ShowMenus">Вернуться</a><br /><br />
+</body>
+</html>

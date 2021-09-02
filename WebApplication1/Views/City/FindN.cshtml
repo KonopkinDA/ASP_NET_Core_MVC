@@ -1,0 +1,28 @@
+﻿@model IEnumerable<WebApplication1.Storage.Entity.City>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowCitys</title>
+</head>
+<body>
+    <div>
+        <h1>Города</h1>
+        @foreach (var item in Model)
+        {
+            <label>ID: </label>@item.Id<br />
+            <label>Название города:  </label>@item.Name<br />
+            <label>Население города:  </label>@item.People<br /><br />
+
+        }
+    </div>
+
+    <a href="/City/ShowCitys">Вернуться</a><br /><br />
+
+</body>
+</html>

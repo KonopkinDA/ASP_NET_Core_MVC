@@ -1,0 +1,25 @@
+﻿@model WebApplication1.Managers.CreateOrUpdateRestaurantRequest
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateRestaurants</title>
+</head>
+<body>
+    @using (Html.BeginForm("Create", "Restaurant", FormMethod.Post))
+    {
+        <label>Название ресторана: </label>
+        <input id="Name" type="text" name="Name" /><br /><br />
+        <label>Количество звёзд: </label>
+        <input id="Stars" type="text" name="Stars" /><br /><br />
+        <input type="submit" value="Добавить новый ресторан" />
+    }
+
+    <a href="/City/ShowCitys">Вернуться</a><br /><br />
+</body>
+</html>

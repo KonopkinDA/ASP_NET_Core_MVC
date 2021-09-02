@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WebApplication1.Storage.Entity.Country>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowCountrys</title>
+</head>
+<body>
+    <div>
+        <h1>Страны</h1>
+        @foreach (var item in Model)
+        {
+            <label>ID: </label>@item.Id<br />
+            <label>Название страны:  </label>@item.Name<br />
+            <label>Комментарий о стране:  </label>@item.Comment<br />
+            <a href="/Country/UpdateCountry/@item.Id">Редактировать страну</a><br />
+            <a href="/Country/DeleteCountry/@item.Id">Удалить страну</a><br />
+            <a href="/City/CreateCitys/@item.Id">Добавить город</a><br /><br />
+
+        }
+    </div>
+
+    @using (Html.BeginForm("CreateCountry", "Country"))
+    {
+        <input type="submit" value="Добавить страну" />
+    }
+    <br />
+    @using (Html.BeginForm("ShowCitys", "City", FormMethod.Get))
+    {
+        <input type="submit" value="Показать города" />
+    }
+</body>
+</html>

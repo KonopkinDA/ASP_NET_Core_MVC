@@ -1,0 +1,28 @@
+﻿@model IEnumerable<WebApplication1.Storage.Entity.Restaurant>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowRestaurants</title>
+</head>
+<body>
+    <div>
+        <h1>Рестораны</h1>
+        @foreach (var item in Model)
+        {
+            <label>ID: </label>@item.Id<br />
+            <label>Название ресторана:  </label>@item.Name<br />
+            <label>Звёзды ресторана:  </label>@item.Stars<br /><br />
+
+        }
+    </div>
+
+    <a href="/Restaurant/ShowRestaurants">Вернуться</a><br /><br />
+
+</body>
+</html>

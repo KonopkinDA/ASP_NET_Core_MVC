@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Storage.Entity.Menu
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateMenu</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Update", "Menu", FormMethod.Post))
+        {
+            <input id="MenuId" name="MenuId" type="hidden" value="@Model.Id" />
+
+            <label>Название меню: </label>
+            <input id="Name" type="text" name="Name" value="@Model.Name" /><br /><br />
+            <label>Скидка на меню: </label>
+            <input id="Size" type="text" name="Size" value="@Model.Size" /><br /><br />
+            <input type="submit" value="Сохранить изменения" />
+        }
+
+        <a href="/Menu/ShowMenus">Вернуться</a><br /><br />
+    </div>
+</body>
+</html>

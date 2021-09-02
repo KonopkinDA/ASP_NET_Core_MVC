@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WebApplication1.Storage.Entity.Food>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowFoods</title>
+</head>
+<body>
+    <div>
+        <h1>Блюда</h1>
+        @foreach (var item in Model)
+        {
+            <label>ID: </label>@item.Id<br />
+            <label>Название блюда:  </label>@item.Name<br />
+            <label>Цена блюда:  </label>@item.Price<br />
+            <label>Меню: </label>@item.MenuFor.Name<br />
+            <a href="/Food/UpdateFoods/@item.Id">Редактировать блюдо</a><br />
+            <a href="/Food/DeleteFood/@item.Id">Удалить блюдо</a><br />
+            <a href="/Product/CreateProducts/@item.Id">Добавить продукт</a><br /><br />
+
+        }
+    </div>
+    <a href="/Product/ShowProducts">Показать продукты</a><br /><br />
+    <a href="/Menu/ShowMenus">Вернуться к меню</a><br /><br />
+
+</body>
+</html>

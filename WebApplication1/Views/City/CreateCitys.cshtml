@@ -1,0 +1,25 @@
+﻿@model WebApplication1.Managers.CreateOrUpdateCityRequest
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateCitys</title>
+</head>
+<body>
+    @using (Html.BeginForm("Create", "City", FormMethod.Post))
+    {
+        <label>Название Города: </label>
+        <input id="Name" type="text" name="Name" /><br /><br />
+        <label>Население города: </label>
+        <input id="People" type="text" name="People" /><br /><br />
+        <input type="submit" value="Добавить новый город" />
+    }
+
+    <a href="/Country/ShowCountrys">Вернуться</a><br /><br />
+</body>
+</html>

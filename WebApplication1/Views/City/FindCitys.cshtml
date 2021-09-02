@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Managers.FindCityRequest
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FindCitys</title>
+</head>
+<body>
+    @using (Html.BeginForm("FindN", "City"))
+    {
+        <label>Название Города: </label>
+        <input id="Name" type="text" name="Name" /><br /><br />
+        <input type="submit" value="Искать по названию" /><br />
+        <br />
+    }
+    @using (Html.BeginForm("FindP", "City"))
+    {
+        <label>Население города: </label>
+        <input id="People" type="text" name="People" /><br /><br />
+        <input type="submit" value="Искать по населению" /><br />
+    }
+    <a href="/City/ShowCitys">Вернуться</a><br /><br />
+</body>
+</html>
